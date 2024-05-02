@@ -3,6 +3,7 @@ package com.techno.ecommerce.model;
 import java.time.LocalDate;
 
 public class CustomerModel {
+	private int custId;
 	private String firstName;
 	private String lastName;
 	private LocalDate dob;
@@ -24,6 +25,10 @@ public class CustomerModel {
 	}
 	
 	//Getter
+	public  int custId() {
+		return  custId;
+	}
+	
 	public  String getfirstName() {
 		return  firstName;
 	}
@@ -55,6 +60,10 @@ public class CustomerModel {
 
 	
 	//Setter
+	
+			public void setCustId(int newCustId) {
+				this.custId = newCustId;
+			}
 	
 			public void setFirstName(String newFirstName) {
 			    this.firstName = newFirstName;

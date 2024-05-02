@@ -7,9 +7,9 @@
 <title>Admin page</title>
 <link rel="stylesheet" text="text/css" href="/MyEcommerceWebsite/css/admin.css">
 </head>
-<body>
 
-<div class="content_div">
+<body>
+  <div class="content_div">
     <div class="side_content_div">
       <button class="function_button_1">
         Techno
@@ -21,6 +21,10 @@
       <button class="function_button_3" onclick="show_product_div()">
         Products
 
+      </button>
+      
+       <button class="function_button_6" onclick="show_AddProduct_div()">
+        Add Category
       </button>
 
       <button class="function_button_4" onclick="show_AddProduct_div()">
@@ -57,6 +61,7 @@
           <div class="table_div">
             <table>
               <tr>
+              	<th> Id </th>
                 <th> User Name</th>
                 <th> First Name</th>
                 <th> Last Name</th>
@@ -67,6 +72,7 @@
               </tr>
     
               <tr>
+              	<td> 1 </td>
                 <td> swze </td>
                 <td> Sangam </td>
                 <td> Thapa</td>
@@ -77,6 +83,7 @@
               </tr>
     
               <tr>
+              	<td> 1 </td>
                 <td> swze </td>
                 <td> Sangam </td>
                 <td> Thapa</td>
@@ -87,6 +94,7 @@
               </tr>
     
               <tr>
+              	<td> 1 </td>
                 <td> swze </td>
                 <td> Sangam </td>
                 <td> Thapa</td>
@@ -97,6 +105,7 @@
               </tr>
     
               <tr>
+              	<td> 1 </td>
                 <td> swze </td>
                 <td> Sangam </td>
                 <td> Thapa</td>
@@ -107,6 +116,7 @@
               </tr>
     
               <tr>
+              	<td> 1 </td>
                 <td> swze </td>
                 <td> Sangam </td>
                 <td> Thapa</td>
@@ -117,6 +127,7 @@
               </tr>
     
               <tr>
+              	<td> 1 </td>
                 <td> swze </td>
                 <td> Sangam </td>
                 <td> Thapa</td>
@@ -127,6 +138,7 @@
               </tr>
     
               <tr>
+              	<td> 1 </td>
                 <td> swze </td>
                 <td> Sangam </td>
                 <td> Thapa</td>
@@ -137,6 +149,7 @@
               </tr>
     
               <tr>
+              	<td> 1 </td>
                 <td> swze </td>
                 <td> Sangam </td>
                 <td> Thapa</td>
@@ -248,6 +261,10 @@
           </div>
         </div>
       </div>
+      
+      <div class="content_div_4" id = "div4">
+      
+      </div>
 
       <div class="content_div_3" id="div3">
         <p class="prod_add"> Add Product</p>
@@ -260,16 +277,42 @@
               <label for="input-file" id="drop-area">
                 <input type="file" accept="image/*" id="input-file" hidden>
                 <div id="img-view">
-                  <img src="images/upload.webp">
+                  <img src="/MyEcommerceWebsite/images/slideshow_images/upload.webp">
                   <p> Drag and drop or click here <br> to upload image</p>
                   <span> Upload any images from desktop </span>
                 </div>
               </label>
             </div>
+          </div>
 
-            <div class="product_info">
-
+          <div class="product_info">
+            <div class="pro_name">
+              <p> Product Name</p>
+              <input class="place" type="text" placeholder="Enter Product Name">
             </div>
+            
+            <div class="pro_name">
+              <p> Category</p>
+              <input class="place" type="text" placeholder="Enter Product Category">
+            </div>
+
+            <div class="pro_name">
+              <p> Price</p>
+              <input class="place" type="text" placeholder="Enter Product Price">
+            </div>
+
+            <div class="pro_name">
+              <p> Stock</p>
+              <input class="place" type="text" placeholder="Enter Product Stock">
+            </div>
+
+            <div class="pro_name">
+              <p> Description</p>
+              <input class="place_dec" type="text" placeholder="Enter Product Description">
+
+              <button class="publish"> Publish </button>
+            </div>
+            
           </div>
 
           
@@ -444,5 +487,8 @@ function uploadImage() {
 
   </script>
 
+  
+
+  
 </body>
 </html>

@@ -62,7 +62,7 @@ public class RegisterServlet extends HttpServlet {
 		int result = dbController.addCustomer(customerModel);
 	
 		if (result == 1) {
-			messageSession.setAttribute("message", "Registration Successfull !!");
+			messageSession.setAttribute("message", "Registration Successfull !!");	
 			response.sendRedirect(request.getContextPath() + "/pages/login.jsp");
 			
 		}else  {

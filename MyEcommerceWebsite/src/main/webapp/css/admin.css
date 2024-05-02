@@ -18,8 +18,7 @@ body{
 .side_content_div{
   background-color: azure;
   display: grid;
-  grid-template-rows: 180px 80px 80px 80px 80px;
-  min-height: 100vh;
+  grid-template-rows: 180px 80px 80px 80px 80px 80px;
   row-gap: 10px;
 }
 
@@ -33,7 +32,7 @@ body{
   transition: 0.2s;
 }
 
-.function_button_2, .function_button_3, .function_button_4, .function_button_5 {
+.function_button_2, .function_button_3,.function_button_6,.function_button_4, .function_button_5 {
   font-size: 15px;
   border: none;
   background-color: azure;
@@ -44,7 +43,7 @@ body{
 
 }
 
-.function_button_2:hover, .function_button_3:hover, .function_button_4:hover, .function_button_5:hover{
+.function_button_2:hover, .function_button_3:hover, .function_button_6:hover, .function_button_4:hover, .function_button_5:hover{
   color: white;
   background-color: black;
 }
@@ -240,11 +239,13 @@ body{
 }
 
 .content_div_3 .content_3_main_div {
+  column-gap: 20px;
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .add_img{
+  margin-left: 20px;
   border: 1px solid gray;
   padding: 8px  ;
   border-radius: 10px;
@@ -253,10 +254,72 @@ body{
 }
 
 .prod_add {
+  margin-top: 25px;
+  margin-bottom: 45px;
+  margin-left: 25px;
   font-size: 26px;
   font-weight: bold;
 }
 
 .img-add{
   font-size: 18px;
+}
+
+.product_info{
+  margin-right: 20px;
+  display: grid;
+  grid-template-rows: 100px 100px 100px 100px 1fr;
+  border: 1px solid gray;
+  padding: 8px  ;
+  border-radius: 10px;
+  min-height: 80vh;
+}
+
+.product_info p{
+  color:rgb(105, 103, 103);
+  margin-top: 10px;
+  margin-left: 15px;
+
+}
+
+.place{
+  padding-top: 20px;
+  padding-right: 520px;
+  padding-left: 15px;
+  padding-bottom: 20px;
+  margin-left: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.place_dec{ 
+  padding-top: 20px;
+  padding-right: 520px;
+  padding-left: 15px;
+  padding-bottom: 220px;
+  margin-left: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.publish{
+  background-color: black;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 26px;
+  padding-right: 26px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-left: 75%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.publish:hover{
+  background-color: white;
+  color: black;
 }
