@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <link rel="stylesheet" text="text/css" href="/MyEcommerceWebsite/css/category.css">
+<jsp:include page="nav.jsp" />
 </head>
 <body>
+
 <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     

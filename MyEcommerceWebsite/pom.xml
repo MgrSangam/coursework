@@ -11,6 +11,11 @@
     <version>8.0.28</version>
 </dependency>
 
+  	<dependency>
+  		<groupId>MyCourseworks</groupId>
+  		<artifactId>MyCourseworks</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
   <build>
     <plugins>
