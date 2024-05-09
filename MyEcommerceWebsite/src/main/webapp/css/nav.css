@@ -14,13 +14,10 @@ body{
 
 
 
-
-
-
-
-
-
-
+.main_div{
+	z-index:200;
+	position:fixed;
+}
 
 nav{
 

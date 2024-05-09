@@ -118,7 +118,9 @@ alert("<%= message %>");
             		  		<td><%= rs.getString(4) %></td>
             		  		<td><%= rs.getString(5) %></td>
             		  		<td><%= rs.getString(6) %></td>
-            		  		<td> <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg></td>
+            		  		<td> <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg>
+            		  			
+            		  		</td>
             		  		
             		  
             		  </tr>
@@ -160,7 +162,8 @@ alert("<%= message %>");
                 <th> Unit Price </th>
                 <th> Description </th>
                 <th> Stock</th>
-                <th> Action </th>
+                <th> Edit </th>
+                <th>Delete</th>
               </tr>
     
              <%
@@ -171,7 +174,7 @@ alert("<%= message %>");
               {
             	  Class.forName("com.mysql.jdbc.Driver");
             	  conne = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce_database","root","");
-            	  sts=conn.createStatement();
+            	  sts=conne.createStatement();
             	  
             	  String qery = ProductUtils.GET_ALL_PRODUCT_INFO;
             	  rss=sts.executeQuery(qery);
@@ -188,7 +191,8 @@ alert("<%= message %>");
             		  		<td><%= rss.getString(4) %></td>
             		  		<td><%= rss.getString(7) %></td>
             		  		<td><%= rss.getString(5) %></td>
-            		  		<td> <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z"/></svg></td>
+            		  		<td> Edit</td>
+            		  		<td>Delete</td> 
             		  		
             		  
             		  </tr>

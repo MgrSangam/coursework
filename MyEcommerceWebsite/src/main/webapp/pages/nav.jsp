@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 
     pageEncoding="UTF-8"%>
+    
+<%@ page import="com.techno.ecommerce.controller.*" %>
+<%@ page import="com.techno.ecommerce.model.*" %>
+<%@ page import="com.techno.ecommerce.servlet.*" %>
+<%@ page import="com.techno.ecommerce.util.*" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Statement" %>
+
 
 <!DOCTYPE html>
 
@@ -18,7 +28,7 @@
 
 <body>
 
-
+<div class="main_div">
 
 <nav>
 
@@ -38,9 +48,9 @@
 
         <li class="button-item"> <a href="/MyEcommerceWebsite/pages/audio_category.jsp"> Audio </a></li>
 
-        <li class="button-item"> <a href="/MyEcommerceWebsite/pages/laptops_category.jsp"> Laptops </a></li>
+        <li class="button-item"> <a href="/MyEcommerceWebsite/pages/laptops_cateogy.jsp"> Laptops </a></li>
 
-        <li class="button-item"> <a href="/MyEcommerceWebsite/pages/smartphone_category.jsp"> Explore </a></li>
+        <li class="button-item"> <a href=""> Explore </a></li>
 
       </ul>
 
@@ -76,7 +86,7 @@
 
             <ul class="account_drop_down">
 
-              <li><a href="#"> Sign in/ Create Account</a></li>
+              <li><a href="/MyEcommerceWebsite/pages/login.jsp"> Sign in/ Create Account</a></li>
 
               <li><a href="#"> Why create an Account</a></li>
 
@@ -111,7 +121,7 @@
       </ul>
 
     </nav>
-
+</div>
  
 
 

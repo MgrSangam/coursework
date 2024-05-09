@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
-    
+<%@ page import="com.techno.ecommerce.controller.*" %>
+<%@ page import="com.techno.ecommerce.model.*" %>
+<%@ page import="com.techno.ecommerce.servlet.*" %>
+<%@ page import="com.techno.ecommerce.util.*" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Statement" %>    
 
 <!DOCTYPE html>
 <html>
@@ -11,38 +18,12 @@
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-<jsp:include page="nav.jsp" />
+
 </head>
 <body>
+<jsp:include page="nav.jsp" />
 
 
- <div class="imgcontainer">
-        <!-- Slider main container -->	
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Img Slides -->
-            <div class="swiper-slide">
-              <img src="/MyEcommerceWebsite/images/slideshow_images/washing machine.webp" />
-            </div>
-            <div class="swiper-slide">
-              <img src="/MyEcommerceWebsite/images/slideshow_images/HP_KV-S24-Ultra-Lifestyle_Buy-TryUPDATED.411.PM_DT.webp" />
-            </div>
-            <div class="swiper-slide">
-              <img src="/MyEcommerceWebsite/images/slideshow_images/reno11-f-5120-1280-gp.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="/MyEcommerceWebsite/images/slideshow_images/Tvs.webp" />
-            </div>
-          </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-  
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-  </div>
   
 
   <h1 class="top">
@@ -77,103 +58,51 @@
     <div class="product_change_div">
       <div class="product_div_main" id="div">
         <div class="product_div">
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
+    	<%
+    	Connection conne =  null;
+        Statement sts = null;
+        ResultSet rss = null;
+        try
+        {
+      	  Class.forName("com.mysql.jdbc.Driver");
+      	  conne = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce_database","root","");
+      	  sts=conne.createStatement();
+      	  
+      	  String qery = ProductUtils.GET_ALL_PRODUCT_INFO;
+      	  rss=sts.executeQuery(qery);
+      	  
+      	  while(rss.next())
+      		 
+      	  {
+      		  %>
+      		  
+      		  <div  class="product"><a href="/MyEcommerceWebsite/pages/product_info.jsp">
+            <img class="product_img" src="/MyEcommerceWebsite/images/products/<%=rss.getString(6) %>">
           
             <p class="product_name">
-              Apple iPhone 15 Pro Max 
+              <%= rss.getString(2)%>
             </p>
             <p class="product_price">
-              Rs.2,14,300  
-            </p>
+              <%= rss.getString(4)%>
+            </p></a>
           </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300 
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300 
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
+      		  
+      		  <% 
+      	  }
+      	  rss.close();
+      	    sts.close();
+      	    conne.close();
+        }catch(Exception ex){
+      	  
+        }
+   			%>
+          
     
   
           
         </div>
 
-      </div>
+      </div> 
 
       <div class="product_div2_main" id="div2">
         <div class="product_div2">
@@ -586,7 +515,30 @@
       
 
   </div>
-
+<div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Img Slides -->
+            <div class="swiper-slide">
+              <img src="/MyEcommerceWebsite/images/slideshow_images/washing machine.webp" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/MyEcommerceWebsite/images/slideshow_images/HP_KV-S24-Ultra-Lifestyle_Buy-TryUPDATED.411.PM_DT.webp" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/MyEcommerceWebsite/images/slideshow_images/reno11-f-5120-1280-gp.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/MyEcommerceWebsite/images/slideshow_images/Tvs.webp" />
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+  
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
  <div class="HERO">
 
   <video autoplay loop muted plays-inline class="back-video">
