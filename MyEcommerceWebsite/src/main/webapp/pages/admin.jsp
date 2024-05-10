@@ -191,7 +191,7 @@ alert("<%= message %>");
             		  		<td><%= rss.getString(4) %></td>
             		  		<td><%= rss.getString(7) %></td>
             		  		<td><%= rss.getString(5) %></td>
-            		  		<td> Edit</td>
+            		  		<td><a href="/MyEcommerceWebsite/pages/updateProduct.jsp?id=<%=rss.getString(1)%>"></a> Delete</td>
             		  		<td>Delete</td> 
             		  		
             		  

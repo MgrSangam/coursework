@@ -95,7 +95,7 @@
             <button class="button">Proceed to Checkout</button>
         </div>
     </div>
-
+	<jsp:include page="footer.jsp" />
 
 </body>
 </html>

@@ -644,5 +644,7 @@ function show_div_change5(){
 
 </script>
 
+	<jsp:include page="footer.jsp" />
+
 </body>
 </html>

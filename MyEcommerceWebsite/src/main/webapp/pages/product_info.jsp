@@ -1,38 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="com.techno.ecommerce.controller.*" %>
+<%@ page import="com.techno.ecommerce.model.*" %>
+<%@ page import="com.techno.ecommerce.servlet.*" %>
+<%@ page import="com.techno.ecommerce.util.*" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Statement" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" text="text/css" href="/MyEcommerceWebsite/css/product_info.css">
+<jsp:include page="nav.jsp" />
 </head>
 <body>
 <section>
 		<div class="container flex">
 			<div class="left">
-				<div class="main_image">
-					<img src="../img/m1.jpeg" class="slide">
+			<%
+              Connection conne =  null;
+              Statement sts = null;
+              ResultSet rss = null;
+              try
+              {
+            	  Class.forName("com.mysql.jdbc.Driver");
+            	  conne = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce_database","root","");
+            	  sts=conne.createStatement();
+            	  
+            	  String qery = ProductUtils.GET_ALL_PRODUCT_INFO;
+            	  rss=sts.executeQuery(qery);
+            	  
+            	  while(rss.next())
+            		 
+            	  {
+            		  %>
+            		  <div class="main_image">
+					<img class="product_img" src="/MyEcommerceWebsite/images/products/<%=rss.getString(6) %>">
 				</div>
-				<div class="option flex">
-					<img src="../img/m1.jpeg" onclick="img('../img/m1.jpeg')"> <img
-						src="../img/m2.jpeg" onclick="img('../img/m2.jpeg')"> <img
-						src="../img/m3.jpeg" onclick="img('../img/m3.jpeg')"> <img
-						src="../img/m4.jpeg" onclick="img('../img/m4.jpeg')"> <img
-						src="../img/m5.jpeg" onclick="img('../img/m5.jpeg')"> <img
-						src="../img/m6.jpeg" onclick="img('../img/m6.jpeg')">
-				</div>
+				
 			</div>
 			<div class="right">
-				<h3>Apple MacBook Pro13" M2 Chip with 8-Core CPU and 10-Core
-					GPU 512GB Storage 8GB RAM-Space Gray</h3>
+				<h3><%= rss.getString(2)%></h3>
 				<h4>
-					<small>Rs</small>243,000.00
+					<%= rss.getString(3) %>
 				</h4>
-				<p>Apple M2 8-Core Chip 8GB Unified RAM | 512GB SSD 13.3" 2560 x
-					1600 Retina IPS Display 10-Core GPU | 16-Core Neural Engine Wi-Fi 6
-					(802.11ax) | Bluetooth 5.0 Thunderbolt 3 FaceTime HD 720p Camera
-					Backlit Magic Keyboard Force Touch Trackpad | Touch ID Sensor macOS</p>
+				<p><%= rss.getString(7)%></p>
 				<h5>Color-SPACE GRAY</h5>
 				<div class="color flex1">
 					<span></span> <span></span> <span></span> <span></span> <span></span>
@@ -50,6 +68,17 @@
 								<button class="block_quantity__button block_quantity__down"></button>
 							</div>
 						</div>
+            		  
+            		  <% 
+            	  }
+            	  rss.close();
+            	    sts.close();
+            	    conne.close();
+              }catch(Exception ex){
+            	  
+              }
+              %>
+				
 					</div>
 
 					<button type="submit">Add to Cart</button>
@@ -90,6 +119,8 @@
 			}
 		};
 	</script>
+	
+		<jsp:include page="footer.jsp" />
 
 </body>
 </html>

@@ -21,8 +21,10 @@
         Contact Us<br>
       </p>
 
-      <p class="support_para">
-        Become Admin/Staff
+      <p class="support_para"><a href="/MyEcommerceWebsite/pages/adminLogin.jsp">
+      
+         Become Admin/Staff</a>
+     
       </p>
       <p>
         Help and Support<br>
