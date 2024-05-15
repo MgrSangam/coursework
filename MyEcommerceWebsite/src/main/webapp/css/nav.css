@@ -239,6 +239,80 @@ nav {
 
 }
 
+.account_drop_down_1{
+
+  position: absolute;
+
+  padding-top: 14px;
+
+  padding-bottom: 14px;
+
+  padding-left: 10px;
+
+  padding-right: 10px;
+
+  width: 150px;
+
+  border-radius: 15px;
+
+  background-color: white;
+
+  right: 6%;
+
+  top: 100%;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: 0.5s;
+
+}
+
+
+
+nav>ul>li:hover .account_drop_down_1{
+
+  visibility: visible;
+
+  opacity: 1;
+
+}
+
+
+
+.account_drop_down_1 li {
+
+  text-decoration: none;
+
+  list-style: none;
+
+  padding: 10px;
+
+  border-radius: 15px;
+
+}
+
+
+
+.account_drop_down_1 li:hover {
+
+  background-color: #f5f5f5;
+
+
+
+}
+
+
+
+.account_drop_down_1 li a{
+
+  text-decoration: none;
+
+  color: black;
+
+}
+
 
 
 .account_drop_down{

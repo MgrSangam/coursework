@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+
+
+*{
+
+	margin: 0;
+
+	padding:0;
+
+	
+
+}
+
+
+
+.container1{
+
+	text-align: center;
+
+	background: #fff
+
+}
+
+
+
+.header{
+
+	padding-top: 60px;
+
+	color: black;
+
+	font-size: 20px;
+
+	margin: auto;
+
+	line-height: 50px;
+
+	
+
+}
+
+
+
+.sub-contain{
+
+	max-width: 1200px;
+
+	margin: auto;
+
+	padding:48px 0;
+
+	display: flex;
+
+	flex-wrap: wrap;
+
+	justify-content: center;
+
+	
+
+}
+
+.teams{
+
+	margin: 10px;
+
+	padding:28px;
+
+	max-width: 50%;
+
+	cursor: pointer;
+
+	transition: 0.4s;
+
+	box-sizing: border-box;
+
+}
+
+.teams img{
+
+	width: 200px;
+
+	height: 200px;
+
+	
+
+	border-radius: 500px;
+
+}
+
+
+
+.name{
+
+	padding: 12px;
+
+	font-weight: bold;
+
+	font-size: 16px;
+
+	text-transform: uppercase;
+
+}
+
+
+
+.desig{
+
+	font-style: italic;
+
+	
+
+}
+
+
+
+.about{
+
+	margin: 20px 0 ;
+
+	font-weight: lighter;
+
+	color: #4e4e4e; 
+
+}
+
+
+
+.contact{
+
+	margin: 14px;
+
+	color: #4e4e4e
+
+}
+
+.teams:hover{
+
+	background: #ddd;
+
+	border-radius: 12px;
+
+}
+
+
+
+
+
+@media sceen and (max-width: 600px){
+
+	.team{
+
+	max-width: 100%;
+
+	}
+
+}

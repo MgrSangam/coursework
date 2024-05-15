@@ -33,9 +33,11 @@ public class DatabaseController {
 			st.setDate(4, Date.valueOf(customerModel.getdob()));
 			st.setString(5, customerModel.getemail());
 			st.setString(6, customerModel.getphoneNumber());
-			st.setString(7, customerModel.getpassword());
 			
 			
+			 String encryptedPassword = StringUtils.encryptPassword(customerModel.getpassword());
+
+	            st.setString(7, encryptedPassword); // Set the encrypted password to the query
 			
 			int result = st.executeUpdate();
 			return result > 0 ? 1: 0;
@@ -56,7 +58,12 @@ public class DatabaseController {
 		try (Connection con = getConnection()) {
 			PreparedStatement st = con.prepareStatement(StringUtils.GET_LOGIN_CUSTOMER);
 			st.setString(1, user_name);
-			st.setString(2, password);
+			
+			
+			 String encryptedPassword = StringUtils.encryptPassword(password);
+
+	            st.setString(2, encryptedPassword); // Set the encrypted password to the query
+	            
 			ResultSet rs = st.executeQuery();
 			
 			if (rs.next()) {

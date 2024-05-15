@@ -16,5 +16,9 @@ public class StringUtils {
 	public static final String REGISTER_ERROR_MESSAGE = "Please correct the form data.";
 	public static final String SERVER_ERROR_MESSAGE = "An unxpected error occurred.";
 	public static final String ERROR_MESSAGE = "errorMessage";
+	public static String encryptPassword(String getpassword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

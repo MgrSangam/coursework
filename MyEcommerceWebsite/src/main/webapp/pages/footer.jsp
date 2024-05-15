@@ -44,6 +44,8 @@
         Privacy Policy<br>
         Digital Payments<br>
         Review & Win<br>
+        <a href="/MyEcommerceWebsite/pages/aboutUs.jsp">AboutUs</a>
+        <br>
       </p>
 
       

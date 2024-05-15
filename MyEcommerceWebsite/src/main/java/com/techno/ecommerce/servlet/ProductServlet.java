@@ -78,14 +78,16 @@ public class ProductServlet extends HttpServlet {
 		
 		ProductModel productModel = new ProductModel(productName, productCategory, unitPrice, quantity, productImage, productDescription);
 		
-		HttpSession messageSession = request.getSession();
+		HttpSession productSession = request.getSession();
 		
 		int result = pcController.addProduct(productModel);
 		
 		if (result == 1){
 			response.sendRedirect(request.getContextPath() + "/pages/admin.jsp");
+			productSession.setAttribute("CategoryMessage", "Product Added Successfully !! ");
 		}else {
 			response.sendRedirect(request.getContextPath() + "/pages/admin.jsp");
+			productSession.setAttribute("CategoryMessage", "Unknown error occured.");
 		}
 		
 		

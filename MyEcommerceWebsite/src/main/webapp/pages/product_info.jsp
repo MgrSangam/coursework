@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Products</title>
 <link rel="stylesheet" text="text/css" href="/MyEcommerceWebsite/css/product_info.css">
 <jsp:include page="nav.jsp" />
 </head>

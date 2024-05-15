@@ -1,0 +1,112 @@
+@charset "ISO-8859-1";
+@import url("https://fonts.googleapis.com/css?family=Nunito:400, 900|Montserrat|Roboto");
+
+*{
+  margin: 0;
+  padding: 0;
+  border: border-box;
+}
+body{
+  overflow-x:hidden;
+  font-family: sans-serif;
+}
+.container{
+  background: #fff;
+  width: 640px;
+  height:450px ;
+  margin: 0 auto;
+  position: center;
+  display: flex;
+  margin-top:50px;
+  box-shadow: 2px 5px 20px rgba(119, 119,119, .5);
+  justify-content: center;
+  align-items: center;
+}
+
+.user-profile{
+  display: flex;
+  align-items: center;
+  width: 250px;
+
+}
+
+.user-profile i{
+
+  font-size: 100px;
+  padding-left: 5rem ;
+}
+
+.rightbox{
+  margin-left: 5rem;
+  margin-top: -15px;
+}
+
+h1{
+  color:  #000000;
+  font-size: 1.2rem;
+  margin-top:20px;
+  margin-left: 40px;
+  margin-bottom: 5px;
+
+}
+.head{
+  font-size: 30px;
+}
+h2{
+  color:#777;
+  text-transform: uppercase;
+  font-size: 8px;
+  letter-spacing: 1px;
+  margin-left:40px;
+  margin-top: 1px;
+}
+.input, p{
+  border:0;
+  border-bottom:1px solid #3fb6a8;
+  width:80%;
+  font-size:  .7cm;
+  padding: 7px 0;
+  color: #070707;
+  margin-left: 40px;
+  outline: none;
+}
+span{
+  font-size: .7em;
+  color:#777;
+
+}
+.btn{
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  border:0;
+  color: white;
+  padding: 7px 15px;
+  border-radius: 7%;
+  border: 2px solid #000;
+  background-color: black;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  margin-top: 15px;
+  margin-left: 40px;
+  transition:color 0.4s linear;
+	position:relative;
+}
+.btn:hover{
+	background-color:white ;
+  transition: 1s;
+  color: black;
+
+}
+.btn::before{
+	content:"";
+	position:absolute;
+	left: 0;
+	top:0;
+	width:10%;
+	height:100%;
+	border-radius: 40px;
+	background: gray;
+	z-index: -1;
+	transition: transform 0.5s;
+	transform:scaleX(0);
+}

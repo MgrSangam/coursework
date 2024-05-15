@@ -107,293 +107,128 @@
       <div class="product_div2_main" id="div2">
         <div class="product_div2">
   
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300 
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300 
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-  
+          <%
+    	Connection con =  null;
+        Statement stss = null;
+        ResultSet rsss = null;
+        try
+        {
+      	  Class.forName("com.mysql.jdbc.Driver");
+      	  con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce_database","root","");
+      	  stss=con.createStatement();
+      	  
+      	  String qery = ProductUtils.GET_ALL_PRODUCT_INFO;
+      	  rsss=stss.executeQuery(qery);
+      	  
+      	  while(rsss.next())
+      		 
+      	  {
+      		  %>
+      		  
+      		  <div  class="product"><a href="/MyEcommerceWebsite/pages/product_info.jsp">
+            <img class="product_img" src="/MyEcommerceWebsite/images/products/<%=rsss.getString(6) %>">
           
-        </div>
-
+            <p class="product_name">
+              <%= rsss.getString(2)%>
+            </p>
+            <p class="product_price">
+              <%= rsss.getString(4)%>
+            </p></a>
+          </div>
+      		  
+      		  <% 
+      	  }
+      	  rsss.close();
+      	    stss.close();
+      	    con.close();
+        }catch(Exception ex){
+      	  
+        }
+   			%>
+</div>
       </div>
 
       <div class="product_div3_main" id="div3">
         <div class="product_div3">
-  
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300 
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300 
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-  
+        <%
+    	
+  						try
+        {
+      	  Class.forName("com.mysql.jdbc.Driver");
+      	  con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce_database","root","");
+      	  stss=con.createStatement();
+      	  
+      	  String qery = ProductUtils.GET_ALL_PRODUCT_INFO;
+      	  rsss=stss.executeQuery(qery);
+      	  
+      	  while(rsss.next())
+      		 
+      	  {
+      		  %>
+      		  
+      		  <div  class="product"><a href="/MyEcommerceWebsite/pages/product_info.jsp">
+            <img class="product_img" src="/MyEcommerceWebsite/images/products/<%=rsss.getString(6) %>">
           
-        </div>
-
+            <p class="product_name">
+              <%= rsss.getString(2)%>
+            </p>
+            <p class="product_price">
+              <%= rsss.getString(4)%>
+            </p></a>
+          </div>
+      		  
+      		  <% 
+      	  }
+      	  rsss.close();
+      	    stss.close();
+      	    con.close();
+        }catch(Exception ex){
+      	  
+        }
+   			%>
+          
+			</div>
       </div>
 
       <div class="product_div4_main" id="div4">
         <div class="product_div4">
   
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
+           <%
+    	
+  						try
+        {
+      	  Class.forName("com.mysql.jdbc.Driver");
+      	  con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce_database","root","");
+      	  stss=con.createStatement();
+      	  
+      	  String qery = ProductUtils.GET_ALL_PRODUCT_INFO;
+      	  rsss=stss.executeQuery(qery);
+      	  
+      	  while(rsss.next())
+      		 
+      	  {
+      		  %>
+      		  
+      		  <div  class="product"><a href="/MyEcommerceWebsite/pages/product_info.jsp">
+            <img class="product_img" src="/MyEcommerceWebsite/images/products/<%=rsss.getString(6) %>">
+          
             <p class="product_name">
-              Apple iPhone 15 Pro Max 
+              <%= rsss.getString(2)%>
             </p>
             <p class="product_price">
-              Rs.2,14,300  
-            </p>
+              <%= rsss.getString(4)%>
+            </p></a>
           </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300 
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300 
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
+      		  
+      		  <% 
+      	  }
+      	  rsss.close();
+      	    stss.close();
+      	    con.close();
+        }catch(Exception ex){
+      	  
+        }
+   			%>
     
   
           
@@ -404,95 +239,42 @@
       <div class="product_div5_main" id="div5">
         <div class="product_div5">
   
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
+          <%
+    	
+  						try
+        {
+      	  Class.forName("com.mysql.jdbc.Driver");
+      	  con = (Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommerce_database","root","");
+      	  stss=con.createStatement();
+      	  
+      	  String qery = ProductUtils.GET_ALL_PRODUCT_INFO;
+      	  rsss=stss.executeQuery(qery);
+      	  
+      	  while(rsss.next())
+      		 
+      	  {
+      		  %>
+      		  
+      		  <div  class="product"><a href="/MyEcommerceWebsite/pages/product_info.jsp">
+            <img class="product_img" src="/MyEcommerceWebsite/images/products/<%=rsss.getString(6) %>">
+          
             <p class="product_name">
-              Apple iPhone 15 Pro Max 
+              <%= rsss.getString(2)%>
             </p>
             <p class="product_price">
-              Rs.2,14,300  
-            </p>
+              <%= rsss.getString(4)%>
+            </p></a>
           </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300 
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300 
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
-    
-          <div class="product">
-            <img class="product_img" src="/MyEcommerceWebsite/images/products/product_1.jpeg">
-            <p class="product_name">
-              Apple iPhone 15 Pro Max 
-            </p>
-            <p class="product_price">
-              Rs.2,14,300  
-            </p>
-          </div>
+      		  
+      		  <% 
+      	  }
+      	  rsss.close();
+      	    stss.close();
+      	    con.close();
+        }catch(Exception ex){
+      	  
+        }
+   			%>
     
   
 
